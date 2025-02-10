@@ -146,7 +146,7 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '$' }
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', extends = '>', precedes = '<' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', extends = '>', precedes = '<', eol = '$' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -876,7 +876,7 @@ require('lazy').setup({
       -- vim.cmd.colorscheme 'vim'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
     opts = {
       transparent = true,
@@ -893,7 +893,7 @@ require('lazy').setup({
     end,
   },
 
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  -- { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
