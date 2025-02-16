@@ -267,12 +267,13 @@ require('lazy').setup({
     'akinsho/bufferline.nvim',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    options = {
-      mode = 'buffers',
-      -- style_preset = bufferline.style_preset.default,
-    },
     config = function()
-      require('bufferline').setup()
+      require('bufferline').setup {
+        options = {
+          mode = 'buffers',
+          numbers = 'buffer_id',
+        },
+      }
     end,
   },
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -301,7 +302,8 @@ require('lazy').setup({
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
         -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
-        keys = vim.g.have_nerd_font and {} or {
+        -- keys = vim.g.have_nerd_font and {} or {
+        keys = {
           Up = '<Up> ',
           Down = '<Down> ',
           Left = '<Left> ',
@@ -981,7 +983,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
