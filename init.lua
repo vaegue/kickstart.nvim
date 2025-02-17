@@ -263,19 +263,7 @@ require('lazy').setup({
       },
     },
   },
-  {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('bufferline').setup {
-        options = {
-          mode = 'buffers',
-          numbers = 'buffer_id',
-        },
-      }
-    end,
-  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -884,18 +872,6 @@ require('lazy').setup({
       transparent = true,
     },
   },
-
-  {
-    's1n7ax/nvim-window-picker',
-    name = 'window-picker',
-    event = 'VeryLazy',
-    version = '2.*',
-    config = function()
-      require('window-picker').setup { hint = 'floating-big-letter' }
-    end,
-  },
-
-  -- { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
