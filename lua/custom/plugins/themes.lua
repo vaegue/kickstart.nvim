@@ -14,12 +14,15 @@ return {
   {
     'olimorris/onedarkpro.nvim',
     priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'onedark_dark'
+    end,
     config = function()
       require('onedarkpro').setup {
         highlights = {},
         options = {
           transparency = true,
-          -- highlight_inactive_windows = true,
+          highlight_inactive_windows = true,
           cursorline = true,
         },
       }
@@ -27,28 +30,13 @@ return {
   },
   { 'UtkarshVerma/molokai.nvim', priority = 1000 },
   -- {
-  --   'adamkali/vaporlush',
-  --   branch = 'v2', -- must be set until stable
-  --   lazy = false,
+  --   'samueljoli/cyberpunk.nvim',
+  --   -- name = 'cyberpunk',
   --   priority = 1000,
-  --   opts = {
-  --     cache = true, -- cache the currently held
-  --     -- style = 'vapor',
-  --     -- style = 'blossom',
-  --     style = '1996',
-  --   },
-  -- },
-  -- {
-  --   'adamkali/vaporlush',
-  --   priority = 1000,
-  --   name = 'vaporlush',
-  --   dependencies = {
-  --     'rktjmp/lush.nvim',
-  --   },
-  --   require('vaporlush').setup {
-  --     options = {
-  --       transparency = true,
-  --     },
-  --   },
+  --   -- config = function()
+  --   --   require('cyberpunk').setup {
+  --   --     theme = 'dark',
+  --   --   }
+  --   -- end,
   -- },
 }
