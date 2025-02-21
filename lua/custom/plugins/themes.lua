@@ -14,9 +14,9 @@ return {
   {
     'olimorris/onedarkpro.nvim',
     priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'onedark_dark'
-    end,
+    -- init = function()
+    --   vim.cmd.colorscheme 'onedark_dark'
+    -- end,
     config = function()
       require('onedarkpro').setup {
         highlights = {},
