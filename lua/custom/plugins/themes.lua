@@ -1,4 +1,9 @@
 return {
+  {
+    'scottmckendry/cyberdream.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   -- {
   --   'adamkali/vaporlush',
   --   branch = 'v2', -- must be set until stable
