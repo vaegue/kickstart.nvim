@@ -894,7 +894,13 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
-      require('mini.tabline').setup { tabpage_section = 'right' }
+      require('mini.tabline').setup {
+        format = function(buf_id, label)
+          local suffix = vim.bo[buf_id].modified and '+ ' or ''
+          return MiniTabline.default_format(buf_id, '[' .. buf_id .. '] ' .. label .. suffix)
+        end,
+        tabpage_section = 'right',
+      }
       require('mini.trailspace').setup()
 
       -- Simple and easy statusline.
